@@ -1,10 +1,11 @@
 package ru.manveru.spring.educationserver.service;
 
 import org.springframework.stereotype.Service;
+import ru.manveru.spring.educationserver.model.DigitSumResponse;
 
 @Service
 public class DigitService {
-    public DigitCalculationResult calculateDigits(int number) {
+    public DigitSumResponse calculateDigits(int number) {
         // Работаем с абсолютным значением чтобы избежать проблем с отрицательными числами
         String numberStr = String.valueOf(Math.abs(number));
         int totalSum = 0;
@@ -25,18 +26,6 @@ public class DigitService {
             }
         }
 
-        return new DigitCalculationResult(totalSum, oddSum, maxDigit);
-    }
-
-    public static class DigitCalculationResult {
-        public final int totalSum;
-        public final int oddSum;
-        public final int maxDigit;
-
-        public DigitCalculationResult(int totalSum, int oddSum, int maxDigit) {
-            this.totalSum = totalSum;
-            this.oddSum = oddSum;
-            this.maxDigit = maxDigit;
-        }
+        return new DigitSumResponse(totalSum, oddSum, maxDigit);
     }
 }

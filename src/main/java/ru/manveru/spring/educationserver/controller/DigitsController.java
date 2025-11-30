@@ -22,15 +22,7 @@ public class DigitsController {
 
     @GetMapping("/sum")
     public ResponseEntity<DigitSumResponse> calculateDigitSums(@RequestParam int number) {
-        DigitService.DigitCalculationResult result = digitService.calculateDigits(number);
-        
-        DigitSumResponse response = new DigitSumResponse(
-            result.totalSum,
-            result.oddSum,
-            result.maxDigit
-        );
-        
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(digitService.calculateDigits(number));
     }
     
 }
