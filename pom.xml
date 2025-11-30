@@ -23,6 +23,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>24</java.version>
         <exec.mainClass>ru.manveru.spring.educationserver.EducationServer</exec.mainClass>
+        <start-class>ru.manveru.spring.educationserver.EducationServer</start-class>
         <maven.compiler.release>24</maven.compiler.release>
     </properties>
     
@@ -44,6 +45,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>ru.manveru.spring.educationserver.EducationServer</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
